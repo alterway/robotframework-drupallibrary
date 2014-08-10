@@ -21,9 +21,9 @@ The user API doc is generated automatically with the command:
 Python API
 ==========
 
-This API is intended to be used by third party Python apps authors who want to
-leverage **robotframework-drupallibrary**. You don't need to read this if
-you're a QA engineer who just want to use it.
+This API is intended to be used by third party Python application authors who
+want to leverage **robotframework-drupallibrary**. You don't need to read this
+if you're a QA engineer who just want to use it.
 
 Subclassing is evil
 -------------------

@@ -12,10 +12,10 @@ About ``Selenium2Library``
 
 The only |robotframework| library exposed by **robotframework-drupallibrary**
 is called :obj:`DrupalLibrary`. Using its keywords in any test case requires
-to setup and open a browser using its :obj:`Open Browser` keyword.
+to set up and open a browser using its :obj:`Open Browser` keyword.
 
 Indeed, :obj:`DrupalLibrary` keywords use the Selenium browser instance that
-is peovided by :obj:`Selenium2Library`. And running any :obj:`DrupalLibrary`
+is provided by :obj:`Selenium2Library`. And running any :obj:`DrupalLibrary`
 without having previously opened a :obj:`Selenium2Library` browser may drive
 to unpredictable results and behaviour.
 
@@ -70,7 +70,7 @@ Running the demos
 
    The test suite targets a public Drupal 7 demo site. You may prefer using
    your own development site changing the variables :samp:`${HOME URL}`
-   alonside with :samp:`${WM NAME}` (the username of an administrator) and
+   alongside with :samp:`${WM NAME}` (the username of an administrator) and
    :samp:`${WM PASS}` (his password).
 
 Of course you start with :file:`addmembers.robot` :
