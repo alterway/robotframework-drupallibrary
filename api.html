@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>API &mdash; robotframework-drupallibrary v1.0.0-dev</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="robotframework-drupallibrary v1.0.0-dev" href="index.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="contributing.html" title="Contributing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">API</a><ul>
+<li><a class="reference internal" href="#user-api">User API</a></li>
+<li><a class="reference internal" href="#python-api">Python API</a><ul>
+<li><a class="reference internal" href="#subclassing-is-evil">Subclassing is evil</a></li>
+<li><a class="reference internal" href="#drupallibrary-methods">DrupalLibrary methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="previous chapter">Usage</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contributing.html"
+                        title="next chapter">Contributing</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/api.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="api">
+<span id="id1"></span><h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="user-api">
+<h2>User API<a class="headerlink" href="#user-api" title="Permalink to this headline">¶</a></h2>
+<p>The user API doc is generated automatically with the command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">python -m robot.libdoc DrupalLibrary the-doc.html</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Open the <a class="reference download internal" href="_downloads/robot-doc.html"><tt class="xref download docutils literal"><span class="pre">User</span> <span class="pre">API</span> <span class="pre">documentation</span></tt></a> in a new tab
+or window to keep the focus here.</p>
+</div>
+</div>
+<div class="section" id="python-api">
+<h2>Python API<a class="headerlink" href="#python-api" title="Permalink to this headline">¶</a></h2>
+<p>This API is intended to be used by third party Python apps authors who want to
+leverage <strong>robotframework-drupallibrary</strong>. You don&#8217;t need to read this if
+you&#8217;re a QA engineer who just want to use it.</p>
+<div class="section" id="subclassing-is-evil">
+<h3>Subclassing is evil<a class="headerlink" href="#subclassing-is-evil" title="Permalink to this headline">¶</a></h3>
+<p>Never subclass the <tt class="docutils literal"><span class="pre">DrupalLibrary</span></tt> class. It won&#8217;t work as expected:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">DrupalLibrary</span> <span class="kn">import</span> <span class="n">DrupalLibrary</span>
+
+<span class="c"># This is evil</span>
+<span class="k">class</span> <span class="nc">MyDrupalLibrary</span><span class="p">(</span><span class="n">DrupalLibrary</span><span class="p">):</span>
+   <span class="c"># Whatever...</span>
+</pre></div>
+</div>
+<p>As said elsewhere, we need to share the same Selenium browser instance as
+<tt class="docutils literal"><span class="pre">Selenium2Library</span></tt>, unless we may have unpredictable behaviours. And your
+library should do it too.</p>
+<p>Consider re-using its resources like in this pattern:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">robot.libraries.BuiltIn</span> <span class="kn">import</span> <span class="n">BuiltIn</span>
+
+<span class="k">class</span> <span class="nc">MyDrupalLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">whatever</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">initializers</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">drupallib</span> <span class="o">=</span> <span class="n">Builtin</span><span class="p">()</span><span class="o">.</span><span class="n">get_library_instance</span><span class="p">(</span><span class="s">&#39;DrupalLibrary&#39;</span><span class="p">)</span>
+        <span class="c"># Other init code ...</span>
+
+    <span class="k">def</span> <span class="nf">new_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">whatever</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Your custome keyword&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">drupallib</span><span class="o">.</span><span class="n">go_home</span><span class="p">()</span>  <span class="c"># Re-using DrupalLibrary keyword</span>
+
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delegate to the DrupalLibrary instance methods unknown here&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">drupallib</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">drupallib</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">err_msg</span> <span class="o">=</span> <span class="s">&quot;Neither MyDrupalLibrary nor DrupalLibrary have {0} attribute&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drupallibrary-methods">
+<h3>DrupalLibrary methods<a class="headerlink" href="#drupallibrary-methods" title="Permalink to this headline">¶</a></h3>
+<p>Check the source code and the <a class="reference download internal" href="_downloads/robot-doc.html"><tt class="xref download docutils literal"><span class="pre">User</span> <span class="pre">API</span> <span class="pre">documentation</span></tt></a>. You just need to know that a Python method named <tt class="docutils literal"><span class="pre">foo_bar</span></tt> is
+automatically available as <tt class="docutils literal"><span class="pre">Foo</span> <span class="pre">Bar</span></tt> keyword.</p>
+<p>Other &#8220;non keyword&#8221; methods are explained below in the base class of
+<tt class="xref py py-class docutils literal"><span class="pre">DrupalLibrary</span></tt>:</p>
+<dl class="class">
+<dt id="DrupalLibrary.DrupalKeywords">
+<em class="property">class </em><tt class="descclassname">DrupalLibrary.</tt><tt class="descname">DrupalKeywords</tt><big>(</big><em>home_url</em><big>)</big><a class="headerlink" href="#DrupalLibrary.DrupalKeywords" title="Permalink to this definition">¶</a></dt>
+<dd><p>The base class for DrupalLibrary that provides the keywords and utility methods</p>
+<dl class="method">
+<dt id="DrupalLibrary.DrupalKeywords._actual_html">
+<tt class="descname">_actual_html</tt><big>(</big><em>parsed=True</em><big>)</big><a class="headerlink" href="#DrupalLibrary.DrupalKeywords._actual_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the actual raw or parsed HTML of the browser</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DrupalLibrary.DrupalKeywords._selenium_browser">
+<tt class="descname">_selenium_browser</tt><a class="headerlink" href="#DrupalLibrary.DrupalKeywords._selenium_browser" title="Permalink to this definition">¶</a></dt>
+<dd><p>The instance of selenium browser actually running to get a fine grained control</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DrupalLibrary.DrupalKeywords._wait_bo_ok_status">
+<tt class="descname">_wait_bo_ok_status</tt><big>(</big><em>exit_on_failure</em>, <em>message=''</em>, <em>timeout=5</em><big>)</big><a class="headerlink" href="#DrupalLibrary.DrupalKeywords._wait_bo_ok_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert BO status box is OK after action
+(need to be on a BO page)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="contributing.html" title="Contributing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             >previous</a> |</li>
+        <li><a href="index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Alter Way.
+      Last updated on August 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

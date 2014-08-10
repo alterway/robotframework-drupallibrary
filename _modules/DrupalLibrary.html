@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DrupalLibrary &mdash; robotframework-drupallibrary v1.0.0-dev</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="robotframework-drupallibrary v1.0.0-dev" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for DrupalLibrary</h1><div class="highlight"><pre>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">=============</span>
+<span class="sd">DrupalLibrary</span>
+<span class="sd">=============</span>
+
+<span class="sd">robotframework keywords and utilities for Drupal testings</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+<span class="kn">from</span> <span class="nn">robot.api</span> <span class="kn">import</span> <span class="n">logger</span>
+
+<span class="kn">from</span> <span class="nn">.drupalkeywords</span> <span class="kn">import</span> <span class="n">DrupalKeywords</span>
+
+<span class="c"># PEP 396 style version marker</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s">u&#39;robotframework-drupallibrary&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;Could not get the package version from pkg_resources&quot;</span><span class="p">)</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="s">&#39;unknown&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">DrupalLibrary</span><span class="p">(</span><span class="n">DrupalKeywords</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;=== DrupalLibrary, ATDD testing friend for Drupal sites ===</span>
+
+<span class="sd">    Setting up a Drupal site using directly *Selenium2Library* may be a</span>
+<span class="sd">    hassle.  *DrupalLibrary* provides a set of keyworks for testing Drupal 7</span>
+<span class="sd">    based sites.</span>
+
+<span class="sd">    === About exit_on-failure parameter ===</span>
+
+<span class="sd">    You can notice that several keywords like `Sign In` and several others</span>
+<span class="sd">    take an optional argument named `exit_on_failure` that&#39;s ${true} by</span>
+<span class="sd">    default.</span>
+
+<span class="sd">    When such a keyword reports a failure, the test session exits. But you</span>
+<span class="sd">    could consider that failure as expected. In example, registering a new</span>
+<span class="sd">    user with `Add Member` will fail for an anonymous user, and the expected</span>
+<span class="sd">    behaviour is a failure.</span>
+
+<span class="sd">    In that kind of test case, you want to carry-on the test suite and</span>
+<span class="sd">    consider this so called failure as a normal behaviour. You just need to</span>
+<span class="sd">    add the `exit_on_failure=${false}` parameter to the keyword. In example:</span>
+
+<span class="sd">    | Add Member | foo | foo@mydomain | foopassword | exit_on_failure=${false} |</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ROBOT_LIBRARY_SCOPE</span> <span class="o">=</span> <span class="s">&#39;GLOBAL&#39;</span>
+    <span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="s">&#39;ROBOT&#39;</span>
+    <span class="n">ROBOT_LIBRARY_VERSION</span> <span class="o">=</span> <span class="n">__version__</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Alter Way.
+      Last updated on August 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

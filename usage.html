@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Usage &mdash; robotframework-drupallibrary v1.0.0-dev</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="robotframework-drupallibrary v1.0.0-dev" href="index.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Usage</a><ul>
+<li><a class="reference internal" href="#about-selenium2library">About <tt class="docutils literal"><span class="pre">Selenium2Library</span></tt></a></li>
+<li><a class="reference internal" href="#demos">Demos</a><ul>
+<li><a class="reference internal" href="#the-resources">The resources</a></li>
+<li><a class="reference internal" href="#adding-members">Adding members</a></li>
+<li><a class="reference internal" href="#removing-these-members">Removing these members</a></li>
+<li><a class="reference internal" href="#running-the-demos">Running the demos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">API</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/usage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">We assume at this stage that you already read and understand the part of
+the <a class="reference external" href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html">Robot Framework User Guide</a> dedicated to tests suite authors.</p>
+</div>
+<div class="section" id="about-selenium2library">
+<h2>About <tt class="docutils literal"><span class="pre">Selenium2Library</span></tt><a class="headerlink" href="#about-selenium2library" title="Permalink to this headline">¶</a></h2>
+<p>The only <a class="reference external" href="http://robotframework.org">RobotFramework</a> library exposed by <strong>robotframework-drupallibrary</strong>
+is called <tt class="xref py py-obj docutils literal"><span class="pre">DrupalLibrary</span></tt>. Using its keywords in any test case requires
+to setup and open a browser using its <tt class="xref py py-obj docutils literal"><span class="pre">Open</span> <span class="pre">Browser</span></tt> keyword.</p>
+<p>Indeed, <tt class="xref py py-obj docutils literal"><span class="pre">DrupalLibrary</span></tt> keywords use the Selenium browser instance that
+is peovided by <tt class="xref py py-obj docutils literal"><span class="pre">Selenium2Library</span></tt>. And running any <tt class="xref py py-obj docutils literal"><span class="pre">DrupalLibrary</span></tt>
+without having previously opened a <tt class="xref py py-obj docutils literal"><span class="pre">Selenium2Library</span></tt> browser may drive
+to unpredictable results and behaviour.</p>
+</div>
+<div class="section" id="demos">
+<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h2>
+<p>Demo files are provided in the <tt class="file docutils literal"><span class="pre">demos/</span></tt> folder of the source bundle
+distributed in our Git repository. Here are some of them that you could use as
+a starter for your test suites.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Please read the <a class="reference download internal" href="_downloads/robot-doc.html"><tt class="xref download docutils literal"><span class="pre">DrupalLibrary</span> <span class="pre">keywords</span></tt></a> in
+another browser window while reading the demos code.</p>
+</div>
+<div class="section" id="the-resources">
+<h3>The resources<a class="headerlink" href="#the-resources" title="Permalink to this headline">¶</a></h3>
+<p>The common resources are provided by the file <tt class="file docutils literal"><span class="pre">resources.robot</span></tt>. It just
+defines a set of variables and an utility keyword.</p>
+<div class="highlight-robotframework"><div class="highlight"><pre><span class="gh">*** Variables ***</span><span class="p"></span>
+<span class="c"># A Drupal demo site</span>
+<span class="p">${</span><span class="nv">HOME URL</span><span class="p">}       </span><span class="s">http://demo.opensourcecms.com/drupal/</span><span class="p"></span>
+<span class="p">${</span><span class="nv">WM NAME</span><span class="p">}        </span><span class="s">admin</span><span class="p"></span>
+<span class="p">${</span><span class="nv">WM PASS</span><span class="p">}        </span><span class="s">demo123</span><span class="p"></span>
+<span class="c"># Params for Selenium2Library</span>
+<span class="p">${</span><span class="nv">BROWSER</span><span class="p">}        </span><span class="s">firefox</span><span class="p"></span>
+<span class="p">${</span><span class="nv">DELAY</span><span class="p">}          </span><span class="s">0</span><span class="p"></span>
+
+<span class="gh">*** Keywords ***</span><span class="p"></span>
+<span class="gu">Open On Page</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">url</span><span class="p">}</span>
+<span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Bla bla</span><span class="p"></span>
+<span class="p">    ...    </span><span class="s">Blo blo</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Open Browser</span><span class="p">    ${</span><span class="nv">url</span><span class="p">}    </span><span class="s">firefox</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Maximize Browser Window</span><span class="p"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-members">
+<h3>Adding members<a class="headerlink" href="#adding-members" title="Permalink to this headline">¶</a></h3>
+<p>The suite from the file <tt class="file docutils literal"><span class="pre">addmembers.robots</span></tt> adds - as its name says - 3
+members, using the <tt class="xref py py-obj docutils literal"><span class="pre">Sign</span> <span class="pre">In</span></tt> and <tt class="xref py py-obj docutils literal"><span class="pre">Add</span> <span class="pre">Member</span></tt> keywords provided by
+<tt class="xref py py-obj docutils literal"><span class="pre">DrupalLibrary</span></tt>. As you can notice as warned above, the suite opens a
+browser with the <tt class="xref py py-obj docutils literal"><span class="pre">Open</span> <span class="pre">Browser</span></tt> keyword from the <tt class="xref py py-obj docutils literal"><span class="pre">Selenium2Library</span></tt>.</p>
+<div class="highlight-robotframework"><div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Documentation</span><span class="p">     </span><span class="s">Adding members to the Drupal demo site</span><span class="p"></span>
+<span class="kn">Resource</span><span class="p">          </span><span class="nn">resources.robot</span><span class="p"></span>
+<span class="kn">Library</span><span class="p">           </span><span class="nn">Selenium2Library</span><span class="p"></span>
+<span class="kn">Library</span><span class="p">           </span><span class="nn">DrupalLibrary</span><span class="p">    ${</span><span class="nv">HOME URL</span><span class="p">}</span>
+
+<span class="gh">*** Test Cases ***</span><span class="p"></span>
+<span class="gu">Open Home Page</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Open Browser</span><span class="p">    ${</span><span class="nv">HOME URL</span><span class="p">}    ${</span><span class="nv">BROWSER</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Maximize Browser Window</span><span class="p"></span>
+
+<span class="gu">Signing In</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Sign In</span><span class="p">    ${</span><span class="nv">WM NAME</span><span class="p">}    ${</span><span class="nv">WM PASS</span><span class="p">}    </span><span class="s">stop_on_failure=</span><span class="p">${</span><span class="nv">false</span><span class="p">}</span>
+
+<span class="gu">Adding Some Members</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Comment</span><span class="p">    </span><span class="s">Add regular member johndoe</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Add Member</span><span class="p">    </span><span class="s">johndoe</span><span class="p">    </span><span class="s">johndoe@foo.com</span><span class="p">    </span><span class="s">bigsecret</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Comment</span><span class="p">    </span><span class="s">Add janedoe as administrator</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Add Member</span><span class="p">    </span><span class="s">janedoe</span><span class="p">    </span><span class="s">janedoe@foo.com</span><span class="p">    </span><span class="s">bigsecret</span><span class="p">    </span><span class="s">extra_roles=administrator</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Comment</span><span class="p">    </span><span class="s">Add inactive member foobar</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Add Member</span><span class="p">    </span><span class="s">foobar</span><span class="p">    </span><span class="s">foobar@foo.com</span><span class="p">    </span><span class="s">bigsecret</span><span class="p">    </span><span class="s">active=</span><span class="p">${</span><span class="nv">false</span><span class="p">}</span>
+
+<span class="gu">Attempt To Duplicate A Member</span><span class="p"></span>
+<span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">We know johndoe is already registered, we don&#39;t consider following</span><span class="p"></span>
+<span class="p">    ...    </span><span class="s">member addition as an error since we are just checking that Drupal denies adding</span><span class="p"></span>
+<span class="p">    ...    </span><span class="s">this user again.</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Add Member</span><span class="p">    </span><span class="s">johndoe</span><span class="p">    </span><span class="s">johndoe@foo.com</span><span class="p">    </span><span class="s">bigsecret</span><span class="p">    </span><span class="s">exit_on_failure=</span><span class="p">${</span><span class="nv">false</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-these-members">
+<h3>Removing these members<a class="headerlink" href="#removing-these-members" title="Permalink to this headline">¶</a></h3>
+<p>The suite from the file <tt class="file docutils literal"><span class="pre">removemembers.robot</span></tt> removes the member
+previously added in various fashions.</p>
+<div class="highlight-robotframework"><div class="highlight"><pre><span class="gh">*** Settings ***</span><span class="p"></span>
+<span class="kn">Documentation</span><span class="p">     </span><span class="s">Remove members added by the addmembers.robot suite</span><span class="p"></span>
+<span class="kn">Resource</span><span class="p">          </span><span class="nn">resources.robot</span><span class="p"></span>
+<span class="kn">Library</span><span class="p">           </span><span class="nn">Selenium2Library</span><span class="p"></span>
+<span class="kn">Library</span><span class="p">           </span><span class="nn">DrupalLibrary</span><span class="p">    ${</span><span class="nv">HOME URL</span><span class="p">}</span>
+
+<span class="gh">*** Test Cases ***</span><span class="p"></span>
+<span class="gu">Open Home Page</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Open Browser</span><span class="p">    ${</span><span class="nv">HOME URL</span><span class="p">}    ${</span><span class="nv">BROWSER</span><span class="p">}</span>
+<span class="p">    </span><span class="nf">Maximize Browser Window</span><span class="p"></span>
+
+<span class="gu">Signing In</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Sign In</span><span class="p">    ${</span><span class="nv">WM NAME</span><span class="p">}    ${</span><span class="nv">WM PASS</span><span class="p">}    </span><span class="s">stop_on_failure=</span><span class="p">${</span><span class="nv">false</span><span class="p">}</span>
+
+<span class="gu">Removing Some Members</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Comment</span><span class="p">    </span><span class="s">Remove completely member johndoe</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Remove Member</span><span class="p">    </span><span class="s">johndoe</span><span class="p">    </span><span class="s">policy=user_cancel_delete</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Comment</span><span class="p">    </span><span class="s">Blockin member janedoe with default behaviour</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Remove Member</span><span class="p">    </span><span class="s">janedoe</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Comment</span><span class="p">    </span><span class="s">Blockin member foobar and reassign its content</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Remove Member</span><span class="p">    </span><span class="s">foobar</span><span class="p">    </span><span class="s">policy=user_cancel_reassign</span><span class="p"></span>
+
+<span class="gu">Attempt to remove a unknown user</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Comment</span><span class="p">    </span><span class="s">We know this will fail</span><span class="p"></span>
+<span class="p">    </span><span class="nf">Remove Member</span><span class="p">    </span><span class="s">nosuchanuser</span><span class="p">    </span><span class="s">exit_on_failure=</span><span class="p">${</span><span class="nv">false</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-demos">
+<h3>Running the demos<a class="headerlink" href="#running-the-demos" title="Permalink to this headline">¶</a></h3>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>Don&#8217;t forget to activate your <tt class="docutils literal"><span class="pre">robots</span></tt> virtualenv before running these
+commands. See the <a class="reference internal" href="installation.html#installation"><em>Installation</em></a> chapter.</p>
+<p class="last">The test suite targets a public Drupal 7 demo site. You may prefer using
+your own development site changing the variables <tt class="samp docutils literal"><span class="pre">$</span><em><span class="pre">HOME</span> <span class="pre">URL</span></em></tt>
+alonside with <tt class="samp docutils literal"><span class="pre">$</span><em><span class="pre">WM</span> <span class="pre">NAME</span></em></tt> (the username of an administrator) and
+<tt class="samp docutils literal"><span class="pre">$</span><em><span class="pre">WM</span> <span class="pre">PASS</span></em></tt> (his password).</p>
+</div>
+<p>Of course you start with <tt class="file docutils literal"><span class="pre">addmembers.robot</span></tt> :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">(robots)$</span> <span class="nb">cd </span>demos
+<span class="gp">(robots)$</span> pybot addmember.robot
+<span class="go">==============================================================================</span>
+<span class="go">Addmembers :: Adding members to the Drupal demo site</span>
+<span class="go">==============================================================================</span>
+<span class="go">Open Home Page                                                        | PASS |</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Signing In                                                            | PASS |</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Adding Some Members                                                   | PASS |</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Attempt To Duplicate A Member :: We know johndoe is already regist... | FAIL |</span>
+<span class="go">Something went wrong when creating user johndoe. (Have been waiting for 5 seconds)</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Addmembers :: Adding members to the Drupal demo site                  | FAIL |</span>
+<span class="go">4 critical tests, 3 passed, 1 failed</span>
+<span class="go">4 tests total, 3 passed, 1 failed</span>
+<span class="go">==============================================================================</span>
+<span class="go">Output:  /Users/glenfant/projets/robotframework-drupallibrary/demos/output.xml</span>
+<span class="go">Log:     /Users/glenfant/projets/robotframework-drupallibrary/demos/log.html</span>
+<span class="go">Report:  /Users/glenfant/projets/robotframework-drupallibrary/demos/report.html</span>
+</pre></div>
+</div>
+<p>The console log reports briefly the test session in <tt class="file docutils literal"><span class="pre">log.html</span></tt> and
+<tt class="file docutils literal"><span class="pre">report.html</span></tt>.</p>
+<p>:file`report.html` provides a per suite summary of the run. Links are provided
+:to the details published in <tt class="file docutils literal"><span class="pre">log.html</span></tt>.</p>
+<p>You can notice that the failure details in <tt class="file docutils literal"><span class="pre">log.html</span></tt> shows the browser
+screenshot at the moment of the failure.</p>
+<p>In addition an file named <tt class="file docutils literal"><span class="pre">output.xml</span></tt> is issued by the session. It
+carries the equivalent informations of the ones provided by
+<tt class="file docutils literal"><span class="pre">report.html</span></tt> you can parse in a custom QA application.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><tt class="file docutils literal"><span class="pre">output.xml</span></tt> is not suitable to Jenkins PIC. Use the <tt class="docutils literal"><span class="pre">--xunit</span></tt>
+option to provide a Jenkins suitable report file.</p>
+<p class="last">Type <strong class="command">rebot &#8211;help</strong> to display some usages of this
+<tt class="file docutils literal"><span class="pre">output.xml</span></tt> file.</p>
+</div>
+<p>Now let&#8217;s remove our users:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">(robots)$</span> pybot removemembers.robot
+<span class="go">==============================================================================</span>
+<span class="go">Removemembers :: Remove members added by the addmembers.robot suite</span>
+<span class="go">==============================================================================</span>
+<span class="go">Open Home Page                                                        | PASS |</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Signing In                                                            | PASS |</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Removing Some Members                                                 | PASS |</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Attempt to remove a unknown user                                      | FAIL |</span>
+<span class="go">KeywordError: It seems there is no user named nosuchanuser</span>
+<span class="go">------------------------------------------------------------------------------</span>
+<span class="go">Removemembers :: Remove members added by the addmembers.robot suite   | FAIL |</span>
+<span class="go">4 critical tests, 3 passed, 1 failed</span>
+<span class="go">4 tests total, 3 passed, 1 failed</span>
+<span class="go">==============================================================================</span>
+<span class="go">Output:  /Users/glenfant/projets/robotframework-drupallibrary/demos/output.xml</span>
+<span class="go">Log:     /Users/glenfant/projets/robotframework-drupallibrary/demos/log.html</span>
+<span class="go">Report:  /Users/glenfant/projets/robotframework-drupallibrary/demos/report.html</span>
+</pre></div>
+</div>
+<p>As in the previous session new <tt class="file docutils literal"><span class="pre">output.xml</span></tt>, <tt class="file docutils literal"><span class="pre">log.html</span></tt> and
+<tt class="file docutils literal"><span class="pre">report.html</span></tt> files have been created. Comments about these files are
+superfluous since the above discussion says all at that level.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >previous</a> |</li>
+        <li><a href="index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Alter Way.
+      Last updated on August 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

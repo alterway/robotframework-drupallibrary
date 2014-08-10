@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; robotframework-drupallibrary v1.0.0-dev</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="robotframework-drupallibrary v1.0.0-dev" href="index.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#common-prerequisites">Common Prerequisites</a></li>
+<li><a class="reference internal" href="#end-user-installation">End user installation</a></li>
+<li><a class="reference internal" href="#developer-installation">Developer installation</a><ul>
+<li><a class="reference internal" href="#building-this-documentation">Building this documentation</a></li>
+<li><a class="reference internal" href="#running-the-tests">Running the tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="next chapter">Usage</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/installation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="common-prerequisites">
+<h2>Common Prerequisites<a class="headerlink" href="#common-prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>I assume that you already got Python 2.7, the <a class="reference external" href="https://pip.pypa.io/en/latest/index.html">pip</a> installer and - preferably
+bet not necessarily - <a class="reference external" href="http://virtualenv.readthedocs.org/en/latest/">virtualenv</a>.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>Unlike lots of <a class="reference external" href="http://robotframework.org">RobotFramework</a> libraries, this package will work only with
+CPython, and not Jython or IronPython.</p>
+<p class="last">Why ? Because explore in depth complex HTML structures as the ones
+distributed by modern CMS need a real HTML parser with the support of a
+full featured XPath engine. That&#8217;s why I use the excellent <a class="reference external" href="http://lxml.de/">lxml</a> package,
+that does not - unfortunately - support Jython or IronPython.</p>
+</div>
+</div>
+<div class="section" id="end-user-installation">
+<h2>End user installation<a class="headerlink" href="#end-user-installation" title="Permalink to this headline">¶</a></h2>
+<p>If you just want to use <strong>robotframework-drupallibrary</strong>, you may add and
+activate a dedicated <a class="reference external" href="http://virtualenv.readthedocs.org/en/latest/">virtualenv</a> (strongly recommended) before installing it:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> mkdir ~/venvs
+<span class="gp">$</span> <span class="nb">cd</span> ~/venvs
+<span class="gp">$</span> virtualenv robots
+<span class="gp">$</span> <span class="nb">source </span>robots/bin/activate
+<span class="gp">(robots)$</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Of course you may replace above labels <tt class="docutils literal"><span class="pre">venvs</span></tt> and <tt class="docutils literal"><span class="pre">robots</span></tt> with what
+you&#8217;d prefer. This is just an example, but adapt further reading to your
+alternate choice.</p>
+</div>
+<p>As of today, <strong>robotframework-drupallibrary</strong> is not yet released as a package
+at <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>, so you&#8217;ll install at the moment from the Git repository:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">(robots)$</span> pip install -e git+https://github.com/alterway/robotframework-drupallibrary#egg<span class="o">=</span>robotframework-drupallibrary
+</pre></div>
+</div>
+<p>OK, you&#8217;re done. Continue reading with the next chapter.</p>
+</div>
+<div class="section" id="developer-installation">
+<span id="id2"></span><h2>Developer installation<a class="headerlink" href="#developer-installation" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;re intended to use and contribute to <strong>robotframework-drupallibrary</strong>,
+follow these steps :</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">(robots)$</span> git clone git@github.com:alterway/robotframework-drupallibrary.git
+<span class="gp">(robots)$</span> <span class="nb">cd </span>robotframework-drupallibrary
+<span class="gp">(robots)$</span> python setup.py develop
+</pre></div>
+</div>
+<p>Install the development and tests specific add-ons:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">(robots)$</span> pip install robotframework-drupallibrary<span class="o">[</span>dev<span class="o">]</span>
+</pre></div>
+</div>
+<div class="section" id="building-this-documentation">
+<h3>Building this documentation<a class="headerlink" href="#building-this-documentation" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">(robots)$</span> python setup.py build_sphinx
+</pre></div>
+</div>
+<p>The HTML documentation is now available in the directory mentioned by the
+<tt class="file docutils literal"><span class="pre">setup.cfg</span></tt> in the <tt class="docutils literal"><span class="pre">build_dir</span></tt> option of the <tt class="docutils literal"><span class="pre">build_sphinx</span></tt> section.</p>
+</div>
+<div class="section" id="running-the-tests">
+<h3>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">(robots)$</span> python setup.py <span class="nb">test</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you&#8217;re working on a Git fork, your &#8220;pull request&#8221; won&#8217;t be accepted if
+you don&#8217;t keep the tests smiling.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >previous</a> |</li>
+        <li><a href="index.html">robotframework-drupallibrary v1.0.0-dev</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Alter Way.
+      Last updated on August 10, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
