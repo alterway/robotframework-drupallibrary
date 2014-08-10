@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+docs/changes.rst
+docs/contributors.rst
+src/DrupalLibrary/__init__.py
+src/DrupalLibrary/drupalkeywords.py
+src/robotframework_drupallibrary.egg-info/PKG-INFO
+src/robotframework_drupallibrary.egg-info/SOURCES.txt
+src/robotframework_drupallibrary.egg-info/dependency_links.txt
+src/robotframework_drupallibrary.egg-info/not-zip-safe
+src/robotframework_drupallibrary.egg-info/requires.txt
+src/robotframework_drupallibrary.egg-info/top_level.txt
