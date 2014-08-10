@@ -13,7 +13,7 @@ RobotFramework keywords and utilities for Drupal testings
 from setuptools import setup, find_packages
 import os, sys
 
-version = '1.0.0-dev'
+version = '1.0.0a1'
 
 this_directory = os.path.abspath(os.path.dirname(__file__))
 
