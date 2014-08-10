@@ -1,7 +1,0 @@
-setuptools
-robotframework-selenium2library
-lxml
-
-[dev]
-Sphinx
-sphinxcontrib-robotdoc

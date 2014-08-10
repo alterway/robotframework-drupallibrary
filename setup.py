@@ -7,8 +7,6 @@ robotframework-drupallibrary
 RobotFramework keywords and utilities for Drupal testings
 """
 
-# FIXME: Please read http://pythonhosted.org/setuptools/setuptools.html to
-#        customize in depth your setup script
 
 from setuptools import setup, find_packages
 import os, sys

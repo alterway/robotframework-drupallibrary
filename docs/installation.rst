@@ -40,8 +40,14 @@ activate a dedicated |virtualenv| (strongly recommended) before installing it:
    you'd prefer. This is just an example, but adapt further reading to your
    alternate choice.
 
-As of today, **robotframework-drupallibrary** is not yet released as a package
-at |PyPI|, so you'll install at the moment from the Git repository:
+
+Install the latest version published on |PyPI|:
+
+.. code-block:: console
+
+   (robots)$ pip install robotframework-drupallibrary
+
+Or you may prefer to play with bleeding edge software with more or less bugs.
 
 .. code-block:: console
 
