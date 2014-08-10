@@ -1,3 +1,5 @@
 .idea
+docs/robot-doc.html
 dist/
 build/
+gh-pages/
