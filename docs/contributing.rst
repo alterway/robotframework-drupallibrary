@@ -28,7 +28,7 @@ the development **for** |robotframework|. So...
   layout).
 - I'm stuck to find an easy way to mock the downstream Selenium engine in the
   unit tests.
-- I did'nt find (or search correctly) recommanded patterns in the |rf-user-guide|.
+- I didn't find (or search correctly) recommended patterns in the |rf-user-guide|.
   Any pointer is welcome.
 
 If you want to improve this package too, consider forking this project,

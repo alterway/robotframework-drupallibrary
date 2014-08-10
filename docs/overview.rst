@@ -16,7 +16,7 @@ What's this ?
 =============
 
 This package provides a new keywords library intended to help authors of
-Drupal sites functional testing scenarios setting up the site and shortcut
+Drupal sites functional testing scenarios setting up the site and short cut
 looooong fixture scripts using the classical and "all purpose"
 `robotframework-selenium2library <https://github.com/rtomac/robotframework-selenium2library>`_.
 

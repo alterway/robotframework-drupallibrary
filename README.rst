@@ -34,7 +34,7 @@ Build the Sphinx documentation:
 .. code:: console
 
    $ python setup.py build_sphinx
-   $ firefox build/sphinx/html/index.html
+   $ firefox gh-pages/html/index.html
 
 Links
 =====

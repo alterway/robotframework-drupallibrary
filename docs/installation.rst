@@ -8,14 +8,14 @@ Common Prerequisites
 ====================
 
 I assume that you already got Python 2.7, the |pip| installer and - preferably
-bet not necessarily - |virtualenv|.
+but not necessarily - |virtualenv|.
 
 .. attention::
 
    Unlike lots of |robotframework| libraries, this package will work only with
    CPython, and not Jython or IronPython.
 
-   Why ? Because explore in depth complex HTML structures as the ones
+   Why? Because explore in depth complex HTML structures as the ones
    distributed by modern CMS need a real HTML parser with the support of a
    full featured XPath engine. That's why I use the excellent |lxml| package,
    that does not - unfortunately - support Jython or IronPython.
