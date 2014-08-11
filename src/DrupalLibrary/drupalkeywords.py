@@ -37,7 +37,10 @@ class FailureManager(object):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         if exc_type is not None:
-            exc_val.ROBOT_EXIT_ON_FAILURE = True
+            if self.message:
+                exc_val.message += ": {0}".format(self.message)
+            if self.exit_on_failure:
+                exc_val.ROBOT_EXIT_ON_FAILURE = True
 
 
 class DrupalKeywords(object):

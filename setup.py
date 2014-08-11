@@ -61,6 +61,7 @@ setup(name='robotframework-drupallibrary',
           "Programming Language :: Python",
           "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
           "Topic :: Software Development :: Testing",
+          "Topic :: Software Development :: Quality Assurance",
           "Development Status :: 3 - Alpha",
           "Programming Language :: Python :: 2.6",
           "Programming Language :: Python :: 2.7"

@@ -7,7 +7,7 @@ Contributing
 As an end user
 ==============
 
-Of course, you do not need to understand any work of Python to help improving
+Of course, you do not need to understand any word of Python to help improving
 **robotframework-drupallibrary**. You just need to know how to write
 |robotframework| test cases and test suites that leverage its keywords.
 
