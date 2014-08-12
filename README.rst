@@ -2,6 +2,14 @@
 robotframework-drupallibrary
 ============================
 
+.. image:: https://pypip.in/download/robotframework-drupallibrary/badge.svg
+   :target: https://pypi.python.org/pypi//robotframework-drupallibrary/
+   :alt: Downloads
+
+.. image:: https://pypip.in/version/robotframework-drupallibrary/badge.svg
+    :target: https://pypi.python.org/pypi/robotframework-drupallibrary/
+    :alt: Latest Version
+
 RobotFramework keywords and utilities for Drupal site acceptance testings.
 
 You may learn about RobotFramework reading from http://robotframework.org
