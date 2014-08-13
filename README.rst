@@ -7,9 +7,21 @@ robotframework-drupallibrary
    :alt: Downloads
 
 .. image:: https://pypip.in/version/robotframework-drupallibrary/badge.svg
-    :target: https://pypi.python.org/pypi/robotframework-drupallibrary/
-    :alt: Latest Version
+   :target: https://pypi.python.org/pypi/robotframework-drupallibrary/
+   :alt: Latest Version
 
+.. image:: https://pypip.in/py_versions/robotframework-drupallibrary/badge.svg
+    :target: https://pypi.python.org/pypi/robotframework-drupallibrary/
+    :alt: Supported Python versions
+
+.. image:: https://pypip.in/status/robotframework-drupallibrary/badge.svg
+   :target: https://pypi.python.org/pypi/robotframework-drupallibrary/
+   :alt: Development Status
+
+.. image:: https://pypip.in/license/robotframework-drupallibrary/badge.svg
+    :target: https://pypi.python.org/pypi/robotframework-drupallibrary/
+    :alt: License
+    
 RobotFramework keywords and utilities for Drupal site acceptance testings.
 
 You may learn about RobotFramework reading from http://robotframework.org
@@ -54,3 +66,8 @@ Project home page and source code
 Issues tracker
 
   https://github.com/alterway/robotframework-drupallibrary/issues
+
+PyPI
+
+  https://pypi.python.org/pypi/robotframework-drupallibrary/
+
